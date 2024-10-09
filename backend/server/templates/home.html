@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="home.html"> <img src="{% static 'images/im2.png' %}" class="logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li> <a href="home.html">Home</a></li>
+                    <li> <a href="about.html">About</a></li>
+                    <li> <a href="courses.html">Courses</a></li>
+                    <li> <a href="attend.html">Attendance</a></li>
+                    <li> <a href="blog.html">Blog</a></li>
+                    <li> <a href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="text-box">
+            <h1>Inspiring Minds, Transforming Lives</h1>
+            <p>using advanced quality scoring Advance Algorithm and Machine Learning, we ensure that you receive more ideas from our top quality creatives.</p>
+            <a href="#" class="hero-btn">Visit us to know more</a>
+        </div>
+    </section>
+
+    <section class="courses">
+        <h1>Courses we offer</h1>
+        <p>using advanced quality scoring Advance Algorithm and Machine Learning, we ensure that you receive more ideas from our top quality creatives.</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>Diploma</h3>
+                <ul>
+                    <li>Diploma in Cyber Security</li>
+                    <li>Diploma in Data Science</li>
+                    <li>Diploma in Networking Technology</li>
+                    <li>Diploma in Animation and Multimedia</li>
+                    <li>Diploma in Mobile Application Development</li>
+                </ul>
+            </div>
+            <div class="course-col">
+                <h3>Degree</h3>
+                <ul>
+                    <li>Bachelor of Technology in Computer Science (B.Tech CSE)</li>
+                    <li>Bachelor of Information Technology</li>
+                    <li>Bachelor of Engineering in Software Engineering</li>
+                    <li>Bachelor of Science in Data Science</li>
+                    <li>Bachelor of Technology in Artificial Intelligence</li>
+                </ul>
+            </div>
+            <div class="course-col">
+                <h3>Post Graduate</h3>
+                <ul>
+                    <li>Master of Technology in Computer Science</li>
+                    <li>Master of Science in Data Science</li>
+                    <li>Master of Technology in Information Technology</li>
+                    <li>Master of Science in Artificial Intelligence</li>
+                    <li>Master of Science in Cybersecurity</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="campus">
+        <h1>Our Global Campus</h1>
+        <p>using advanced quality scoring Advance Algorithm and Machine Learning, we ensure that you receive more ideas from our top quality creatives.</p>
+        <div class="row">
+            <div class="campus-col">
+                <img src="{% static 'images/campus.jpg' %}">
+                <div class="layer">
+                    <h3>Mumbai City</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <div class="layer">
+                    <img src="{% static 'images/campus3.avif' %}">
+                    <h3>Chennai</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <div class="layer">
+                    <img src="{% static 'images/campus2.jpeg' %}">
+                    <h3>Hyderabad</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p>using advanced quality scoring Advance Algorithm and Machine Learning, we ensure that you receive more ideas from our top quality creatives.</p>
+        <div class="row">
+            <div class="facilities-col">
+                <img src="{% static 'images/library.jpg' %}">
+                <h3>Depository of Knowledge</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquam inventore odio eum ratione?</p>
+            </div>
+            <div class="facilities-col">
+                <img src="{% static 'images/court.webp' %}">
+                <h3>Frolic Stadium</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquam inventore odio eum ratione?</p>
+            </div>
+            <div class="facilities-col">
+                <img src="{% static 'images/cafeteria.jpeg' %}">
+                <h3>Cafeteria</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquam inventore odio eum ratione?</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonial">
+        <h1>Student Feedback</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, nobis, itaque minima voluptate neque hic velit repellat illo nostrum minus odit, voluptatum quaerat aliquam unde a esse praesentium rem voluptas?</p>
+        <div class="row">
+            <div class="carousel">
+                <div class="test">
+                    <img src="{% static 'images/mitchprichett.jpg' %}">
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates, voluptatibus ipsam deleniti obcaecati saepe. Reiciendis dicta expedita eos accusantium earum dolores voluptate quae repudiandae, beatae laboriosam qui facere quia!</p>
+                        <h3>Mitch Prichett</h3>
+                    </div>
+                </div>
+
+                <div class="test">
+                    <img src="{% static 'images/gloriaa.webp' %}">
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates, voluptatibus ipsam deleniti obcaecati saepe. Reiciendis dicta expedita eos accusantium earum dolores voluptate quae repudiandae, beatae laboriosam qui facere quia!</p>
+                        <h3>Gloria Delgado</h3>
+                    </div>
+                </div>
+
+                <div class="test">
+                    <img src="{% static 'images/jonhdoe.jpg' %}">
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates, voluptatibus ipsam deleniti obcaecati saepe. Reiciendis dicta expedita eos accusantium earum dolores voluptate quae repudiandae, beatae laboriosam qui facere quia!</p>
+                        <h3>Jonh Doe</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h1>Enroll for our various online courses</h1>
+        <a href="#" class="hero-btn">CONTACT US</a>
+    </section>
+    
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, quae facere porro animi aliquid perspiciatis quis deserunt voluptatibus excepturi adipisci fugiat tenetur qui vero mollitia soluta quidem dolorem deleniti dicta.</p>
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 University Management System. All Rights Reserved.</p>
+        </footer>
+    </section>
+</body>
+
+
+</html>
