@@ -31,39 +31,23 @@
     </section>
 
     <section class="courses">
-        <h1>Courses we offer</h1>
+        <h1>Courses We Offer</h1>
         <p>Using advanced quality scoring algorithms and machine learning, we offer top-quality courses designed to transform your career.</p>
         <div class="row">
-            <div class="course-col">
-                <h3>Diploma</h3>
-                <ul>
-                    <li>Diploma in Cyber Security</li>
-                    <li>Diploma in Data Science</li>
-                    <li>Diploma in Networking Technology</li>
-                    <li>Diploma in Animation and Multimedia</li>
-                    <li>Diploma in Mobile Application Development</li>
-                </ul>
-            </div>
-            <div class="course-col">
-                <h3>Degree</h3>
-                <ul>
-                    <li>Bachelor of Technology in Computer Science (B.Tech CSE)</li>
-                    <li>Bachelor of Information Technology</li>
-                    <li>Bachelor of Engineering in Software Engineering</li>
-                    <li>Bachelor of Science in Data Science</li>
-                    <li>Bachelor of Technology in Artificial Intelligence</li>
-                </ul>
-            </div>
-            <div class="course-col">
-                <h3>Post Graduate</h3>
-                <ul>
-                    <li>Master of Technology in Computer Science</li>
-                    <li>Master of Science in Data Science</li>
-                    <li>Master of Technology in Information Technology</li>
-                    <li>Master of Science in Artificial Intelligence</li>
-                    <li>Master of Science in Cybersecurity</li>
-                </ul>
-            </div>
+    
+            {% regroup courses by course_domain as grouped_courses %}
+            
+            {% for group in grouped_courses %}
+                <div class="course-col">
+                    <h3>{{ group.grouper }}</h3>
+                    <ul>
+                        {% for course in group.list %}
+                            <li>{{ course.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+    
         </div>
     </section>
 
