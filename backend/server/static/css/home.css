@@ -371,7 +371,7 @@ footer {
     height: 50vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
-    url("aboutus2.jpg");
+    url("../images/aboutus2.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -510,7 +510,7 @@ button:hover {
     height: 50vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
-    url("contactus.jpg");
+    url("../images/contactus.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -536,7 +536,7 @@ button:hover {
     height: 50vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
-    url("coursess.jpg");
+    url("../images/coursess.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;

@@ -7,20 +7,21 @@
     {% load static %}  <!-- Load static files -->
     <link rel="stylesheet" href="{% static 'css/home.css' %}">  <!-- Link to your CSS file -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Document</title>
+    <title>About Us</title>
 </head>
 
 <body>
+    <!-- Navigation Section -->
     <section class="subheader">
         <nav>
-            <a href="home.html"> <img src="{% static 'images/im2.png' %}" class="logo"> <!-- Use static for images -->
+            <a href="{% url 'home' %}"> 
+                <img src="{% static 'images/im2.png' %}" class="logo"> <!-- Use static for images -->
             </a>
             <div class="nav-links">
                 <ul>
-                    <li> <a href="home.html">Home</a></li>
-                    <li> <a href="about.html">About</a></li>
-                    <li> <a href="courses.html">Courses</a></li>
-                    <li> <a href="attend.html">Attendance</a></li>
+                    <li> <a href="{% url 'home' %}">Home</a></li>
+                    <li> <a href="{% url 'about' %}">About</a></li>
+                    <li> <a href="{% url 'courses' %}">Courses</a></li>
                     <li> <a href="blog.html">Blog</a></li>
                     <li> <a href="contactus.html">Contact</a></li>
                 </ul>
@@ -29,42 +30,35 @@
         <h1>About Us</h1>
     </section>
 
+    <!-- About Us Section -->
     <section class="aboutus">
         <div class="row">
             <div class="aboutcol">
                 <h1>Take up an idea, devote yourself, struggle in patience, and the sun will rise</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio odio a vel eum esse magnam
                     eveniet, soluta quidem architecto cumque autem, in odit, totam dolorum veniam dicta possimus dolorem
-                    tempora?
-                </p>
+                    tempora?</p>
                 <a href="#" class="hero-btn black-btn"> Explore Us</a>
             </div>
             <div class="aboutcol">
-                <img src="{% static 'images/aboutus.jpg' %}">  <!-- Use static for images -->
+                <img src="{% static 'images/aboutus.jpg' %}"> <!-- Use static for images -->
             </div>
         </div>
     </section>
 
+    <!-- Footer Section -->
     <section class="footer">
         <h4>About Us</h4>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, quae facere porro animi aliquid perspiciatis
             quis deserunt voluptatibus excepturi adipisci fugiat tenetur qui vero mollitia soluta quidem dolorem
             deleniti dicta.</p>
-        <footer>
-            <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank" class="icon facebook"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com" target="_blank" class="icon instagram"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com" target="_blank" class="icon linkedin"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.twitter.com" target="_blank" class="icon twitter"><i
-                        class="fab fa-twitter"></i></a>
-            </div>
-            <p>
-                &copy; 2024 University Management System. All Rights Reserved.
-            </p>
-        </footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.twitter.com" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 University Management System. All Rights Reserved.</p>
     </section>
 </body>
 

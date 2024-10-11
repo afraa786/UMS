@@ -14,7 +14,7 @@
 .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(university.jpg);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../images/university.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -25,6 +25,9 @@ nav {
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
+}
+nav ul li {
+    background-color: black;
 }
 
 nav img {
@@ -302,7 +305,7 @@ text-align: left;
 .cta{
     margin: 100px;
     width: 80%;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img.jpeg);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/img.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -368,7 +371,7 @@ footer {
     height: 50vh;
     width: 100%;
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
-    url("aboutus2.jpg");
+    url("../images/aboutus.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;

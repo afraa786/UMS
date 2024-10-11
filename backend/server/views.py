@@ -11,3 +11,7 @@ def home(request):
 def about(request):
     if request.method =='GET':
         return render(request,'about.html')
+    
+def courses(request):
+    if request.method =='GET':
+        return render(request,'courses.html')

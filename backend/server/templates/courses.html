@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}  <!-- Load static files -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">  <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Our Courses</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section class="headerr">
+        <nav>
+            <a href="{% url 'home' %}"> <img src="{% static 'images/im2.png' %}" class="logo"></a>
+            <div class="nav-links">
+                <ul>
+                    <li> <a href="{% url 'home' %}">Home</a></li>
+                    <li> <a href="{% url 'about' %}">About</a></li>
+                    <li> <a href="{% url 'courses' %}">Courses</a></li>
+                    <li> <a href="blog.html">Blog</a></li>
+                    <li> <a href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="text-box">
+            <h1>Our Courses</h1>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses">
+        <h2>Professional Courses to Advance Your Career</h2>
+        <p>Dozens of Options, Online or In-Person</p>
+        <p>Discover our wide range of courses designed to help you achieve your academic and professional goals. Whether you want to advance your career, get started in a new field, or pursue a new passion, we have a variety of courses and certificate programs to help you reach your goals. Many of these courses are available online, giving you the flexibility to learn from home at your own pace.</p>
+        
+        <h3>Course Categories</h3>
+        <div class="course-list">
+            <div class="coursescol">
+                <h3>Diploma</h3>
+                <ul>
+                    <li><a href="course1.html">Diploma in Cyber Security</a></li>
+                    <li><a href="course2.html">Diploma in Data Science</a></li>
+                    <li><a href="course3.html">Diploma in Networking Technology</a></li>
+                    <li><a href="course4.html">Diploma in Animation and Multimedia</a></li>
+                    <li><a href="course5.html">Diploma in Mobile Application Development</a></li>
+                </ul>
+            </div>
+            <div class="coursescol">
+                <h3>Degree</h3>
+                <ul>
+                    <li><a href="course6.html">Bachelor of Technology in Computer Science (B.Tech CSE)</a></li>
+                    <li><a href="course7.html">Bachelor of Information Technology</a></li>
+                    <li><a href="course8.html">Bachelor of Engineering in Software Engineering</a></li>
+                    <li><a href="course9.html">Bachelor of Science in Data Science</a></li>
+                    <li><a href="course10.html">Bachelor of Technology in Artificial Intelligence</a></li>
+                </ul>
+            </div>
+            <div class="coursescol">
+                <h3>Post Graduate</h3>
+                <ul>
+                    <li><a href="course11.html">Master of Technology in Computer Science</a></li>
+                    <li><a href="course12.html">Master of Science in Data Science</a></li>
+                    <li><a href="course13.html">Master of Technology in Information Technology</a></li>
+                    <li><a href="course14.html">Master of Science in Artificial Intelligence</a></li>
+                    <li><a href="course15.html">Master of Science in Cybersecurity</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, quae facere porro animi aliquid perspiciatis quis deserunt voluptatibus excepturi adipisci fugiat tenetur qui vero mollitia soluta quidem dolorem deleniti dicta.</p>
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 University Management System. All Rights Reserved.</p>
+        </footer>
+    </section>
+</body>
+
+</html>

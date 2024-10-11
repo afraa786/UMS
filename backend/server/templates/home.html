@@ -6,34 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Document</title>
+    <title>Home | University Management System</title>
 </head>
 
 <body>
     <section class="header">
         <nav>
-            <a href="home.html"> <img src="{% static 'images/im2.png' %}" class="logo"></a>
+            <a href="{% url 'home' %}"> <img src="{% static 'images/im2.png' %}" class="logo" alt="University Logo"></a>
             <div class="nav-links">
                 <ul>
-                    <li> <a href="home.html">Home</a></li>
-                    <li> <a href="about.html">About</a></li>
-                    <li> <a href="courses.html">Courses</a></li>
-                    <li> <a href="attend.html">Attendance</a></li>
-                    <li> <a href="blog.html">Blog</a></li>
-                    <li> <a href="contactus.html">Contact</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'courses' %}">Courses</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="mailto:afraa786@gmail.com">Contact</a></li>
                 </ul>
             </div>
         </nav>
         <div class="text-box">
             <h1>Inspiring Minds, Transforming Lives</h1>
-            <p>using advanced quality scoring Advance Algorithm and Machine Learning, we ensure that you receive more ideas from our top quality creatives.</p>
+            <p>Using advanced quality scoring algorithms and machine learning, we ensure that you receive top-quality ideas from our best creatives.</p>
             <a href="#" class="hero-btn">Visit us to know more</a>
         </div>
     </section>
 
     <section class="courses">
         <h1>Courses we offer</h1>
-        <p>using advanced quality scoring Advance Algorithm and Machine Learning, we ensure that you receive more ideas from our top quality creatives.</p>
+        <p>Using advanced quality scoring algorithms and machine learning, we offer top-quality courses designed to transform your career.</p>
         <div class="row">
             <div class="course-col">
                 <h3>Diploma</h3>
@@ -70,23 +69,23 @@
 
     <section class="campus">
         <h1>Our Global Campus</h1>
-        <p>using advanced quality scoring Advance Algorithm and Machine Learning, we ensure that you receive more ideas from our top quality creatives.</p>
+        <p>We have campuses in major cities across India to provide top-notch educational experiences.</p>
         <div class="row">
             <div class="campus-col">
-                <img src="{% static 'images/campus.jpg' %}">
+                <img src="{% static 'images/campus.jpg' %}" alt="Campus in Mumbai">
                 <div class="layer">
                     <h3>Mumbai City</h3>
                 </div>
             </div>
             <div class="campus-col">
+                <img src="{% static 'images/campus3.avif' %}" alt="Campus in Chennai">
                 <div class="layer">
-                    <img src="{% static 'images/campus3.avif' %}">
                     <h3>Chennai</h3>
                 </div>
             </div>
             <div class="campus-col">
+                <img src="{% static 'images/campus2.jpeg' %}" alt="Campus in Hyderabad">
                 <div class="layer">
-                    <img src="{% static 'images/campus2.jpeg' %}">
                     <h3>Hyderabad</h3>
                 </div>
             </div>
@@ -95,52 +94,52 @@
     
     <section class="facilities">
         <h1>Our Facilities</h1>
-        <p>using advanced quality scoring Advance Algorithm and Machine Learning, we ensure that you receive more ideas from our top quality creatives.</p>
+        <p>We offer a range of modern facilities to support our students' educational and personal growth.</p>
         <div class="row">
             <div class="facilities-col">
-                <img src="{% static 'images/library.jpg' %}">
+                <img src="{% static 'images/library.jpg' %}" alt="Library">
                 <h3>Depository of Knowledge</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquam inventore odio eum ratione?</p>
+                <p>Our well-equipped library provides students with vast resources to excel in their studies.</p>
             </div>
             <div class="facilities-col">
-                <img src="{% static 'images/court.webp' %}">
+                <img src="{% static 'images/court.webp' %}" alt="Sports Court">
                 <h3>Frolic Stadium</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquam inventore odio eum ratione?</p>
+                <p>Our sports facilities allow students to unwind and stay fit during their educational journey.</p>
             </div>
             <div class="facilities-col">
-                <img src="{% static 'images/cafeteria.jpeg' %}">
+                <img src="{% static 'images/cafeteria.jpeg' %}" alt="Cafeteria">
                 <h3>Cafeteria</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquam inventore odio eum ratione?</p>
+                <p>Our cafeteria provides a variety of meals and snacks to keep students energized throughout the day.</p>
             </div>
         </div>
     </section>
     
     <section class="testimonial">
         <h1>Student Feedback</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, nobis, itaque minima voluptate neque hic velit repellat illo nostrum minus odit, voluptatum quaerat aliquam unde a esse praesentium rem voluptas?</p>
+        <p>Here's what our students have to say about their experience at our institution.</p>
         <div class="row">
             <div class="carousel">
                 <div class="test">
-                    <img src="{% static 'images/mitchprichett.jpg' %}">
+                    <img src="{% static 'images/mitchprichett.jpg' %}" alt="Mitch Prichett">
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates, voluptatibus ipsam deleniti obcaecati saepe. Reiciendis dicta expedita eos accusantium earum dolores voluptate quae repudiandae, beatae laboriosam qui facere quia!</p>
+                        <p>The education here has transformed my life, providing me with the skills I need to succeed in my career.</p>
                         <h3>Mitch Prichett</h3>
                     </div>
                 </div>
 
                 <div class="test">
-                    <img src="{% static 'images/gloriaa.webp' %}">
+                    <img src="{% static 'images/gloriaa.webp' %}" alt="Gloria Delgado">
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates, voluptatibus ipsam deleniti obcaecati saepe. Reiciendis dicta expedita eos accusantium earum dolores voluptate quae repudiandae, beatae laboriosam qui facere quia!</p>
+                        <p>I never thought I would have access to such advanced learning methods. This university truly prepares you for the future.</p>
                         <h3>Gloria Delgado</h3>
                     </div>
                 </div>
 
                 <div class="test">
-                    <img src="{% static 'images/jonhdoe.jpg' %}">
+                    <img src="{% static 'images/jonhdoe.jpg' %}" alt="John Doe">
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptates, voluptatibus ipsam deleniti obcaecati saepe. Reiciendis dicta expedita eos accusantium earum dolores voluptate quae repudiandae, beatae laboriosam qui facere quia!</p>
-                        <h3>Jonh Doe</h3>
+                        <p>The faculty here is incredibly supportive, always guiding us to achieve our best potential.</p>
+                        <h3>John Doe</h3>
                     </div>
                 </div>
             </div>
@@ -148,24 +147,20 @@
     </section>
 
     <section class="cta">
-        <h1>Enroll for our various online courses</h1>
+        <h1>Enroll in Our Online Courses</h1>
         <a href="#" class="hero-btn">CONTACT US</a>
     </section>
     
     <section class="footer">
         <h4>About Us</h4>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel, quae facere porro animi aliquid perspiciatis quis deserunt voluptatibus excepturi adipisci fugiat tenetur qui vero mollitia soluta quidem dolorem deleniti dicta.</p>
-        <footer>
-            <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.twitter.com" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2024 University Management System. All Rights Reserved.</p>
-        </footer>
+        <p>Our mission is to provide world-class education and empower students to make an impact in their chosen fields.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.twitter.com" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2024 University Management System. All Rights Reserved.</p>
     </section>
 </body>
-
-checking the changes 
 </html>
