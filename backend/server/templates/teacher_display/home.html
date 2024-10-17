@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.email }}</h1> <!-- Display user's email -->
+
+    <p>Teacher Status: {{ user.is_professor }}</p> <!-- Check if user is a professor -->
+    <p>Account Active: {{ user.is_active }}</p> <!-- Display if the account is active -->
+    
+    <h2>Your Details:</h2>
+    <ul>
+        <li>Email: {{ user.email }}</li>
+        <li>Is Professor: {{ user.is_professor }}</li>
+        <li>Active: {{ user.is_active }}</li>
+    </ul>
+
+    <p>Thank you for logging in as a teacher!</p>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/72e3dd6a7a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{%static "css/login.css"%}" />
+    <title>Sign in</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+
+          {% comment %} <form action="{%url 'login'%}" class="sign-in-form" method = 'post'> {% csrf_token %} {% endcomment %}
+          <form action="{%url 'login'%}" class="sign-in-form" method = 'post'> {% csrf_token %}
+            <h2 class="title">Sign in as a student </h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input name = 'email' type="email" placeholder="Enter your email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input name = "password" type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+          </form>
+
+          <form action="{%url 'login'%}" class="sign-up-form" method = 'post'>{% csrf_token %}
+            {% comment %} <form action="#" class="sign-up-form" method = 'post'> {% csrf_token %} {% endcomment %}
+            <h2 class="title">Sign in as a Teacher </h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input name = 'email' type="email" placeholder="Enter the email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input name = "password" type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Our Proffesor ?</h3>
+            <p>
+                Education is the key to success
+            </p>
+            <button class="btn transparent" id="sign-up-btn" #s>
+              Sign in
+            </button>
+          </div>
+          <img src="{%static "images/log.jpg"%}" class="image" alt="Boy and a rocket to boost its carrer" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Our Student ?</h3>  
+            <p>
+                Educarion is the key to success
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+          </div>
+          <img src="{%static "images/register.jpg"%}" class="image" alt="girl sitting to register herself" />
+        </div>
+      </div>
+    </div>
+
+    <script src="{%static "js/login.js"%}"></script>
+  </body>
+</html>
