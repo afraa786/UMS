@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
+    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/teacher/home.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Dashboard</title>
 </head>
 <body>
-    <h1>Welcome, {{ user.email }}</h1> <!-- Display user's email -->
-
-    <p>Teacher Status: {{ user.is_professor }}</p> <!-- Check if user is a professor -->
-    <p>Account Active: {{ user.is_active }}</p> <!-- Display if the account is active -->
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Your Profile</a></li>
+            <li><a href="#">Your Batch</a></li>
+            <li><a href="#">Documents</a></li>
+            <li><a href="#">Notices</a></li>
+        </ul>
+    </div>
     
-    <h2>Your Details:</h2>
-    <ul>
-        <li>Email: {{ user.email }}</li>
-        <li>Is Professor: {{ user.is_professor }}</li>
-        <li>Active: {{ user.is_active }}</li>
-    </ul>
+    <!-- New Teacher Profile Section -->
+    <div class="profile-section">
+        <img src="https://imgs.search.brave.com/6FW-VbIK0-qjGIEkfmCAUJz_fSqU9Io2rlawaA7eDGM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9jYXJ0/b29uLXNtaWxpbmct/dGVhY2hlci1tYW4t/NTUzNDM4NzIuanBn" alt="Teacher Profile Picture">
+        <h2>John Doe</h2>
+        <p>Senior Mathematics Teacher</p>
+        <div class="details">
+            <p><strong>Subjects:</strong> Algebra, Geometry, Calculus</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+        </div>
+    </div>
+    
+    <!-- Recent Activities -->
+    <div class="recent-activities">
+        <h3>Recent Activities</h3>
+        <ul>
+            <li><i class="fas fa-check"></i> Graded Assignment #5</li>
+            <li><i class="fas fa-calendar"></i> Scheduled Parent-Teacher Meeting</li>
+            <li><i class="fas fa-book"></i> Updated syllabus for Math Class 12</li>
+            <li><i class="fas fa-bell"></i> Sent reminders for upcoming test</li>
+        </ul>
+    </div>
 
-    <p>Thank you for logging in as a teacher!</p>
+<script src="{% static 'js/teacher/home.js' %}"></script>
 </body>
 </html>

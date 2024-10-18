@@ -47,10 +47,10 @@ def login_user(request):
 
         if user is not None and user.is_proffesor:  # Assuming 'is_professor' is a boolean field on your user model
             login(request, user)  # Log the user in
-            redirect('page_of_teacher')
+            return redirect('page_of_teacher')
         if user is not None and not user.is_proffesor:  # Assuming 'is_professor' is a boolean field on your user model
                 login(request, user)  # Log the user in
-                redirect('page_of_student')
+                return redirect('page_of_student')
         
 # def page_of_teacher(request):
 #     email = request.POST.get('email')
