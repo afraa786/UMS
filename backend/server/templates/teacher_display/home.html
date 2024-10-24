@@ -16,8 +16,8 @@
     <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
     <div class="wrapper">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Your Profile</a></li>
+            <li><a href="{%url 'page_of_teacher'%}">Home</a></li>
+            <li><a href="{%url 'profile'%}">Your Profile</a></li>
             <li><a href="#">Your Batch</a></li>
             <li><a href="#">Documents</a></li>
             <li><a href="#">Notices</a></li>
@@ -27,7 +27,7 @@
     <!-- New Teacher Profile Section -->
     <div class="profile-section">
         <img src="https://imgs.search.brave.com/6FW-VbIK0-qjGIEkfmCAUJz_fSqU9Io2rlawaA7eDGM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9jYXJ0/b29uLXNtaWxpbmct/dGVhY2hlci1tYW4t/NTUzNDM4NzIuanBn" alt="Teacher Profile Picture">
-        <h2>John Doe</h2>
+        <h2>{{name}}</h2>
         <p>Senior Mathematics Teacher</p>
         <div class="details">
             <p><strong>Subjects:</strong> Algebra, Geometry, Calculus</p>

@@ -28,3 +28,17 @@ class Courses(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profession = models.CharField(max_length=100)
+    address = models.TextField()
+    history = models.TextField()
+
+    def __str__(self):
+        return self.user.email
+    
+
+

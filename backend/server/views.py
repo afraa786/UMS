@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.http import HttpResponse
-from . models import Courses
+from . models import Courses, Profile
 from . models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+from .forms import ProfileForm
 
 
 # Create your views here.
@@ -51,55 +52,6 @@ def login_user(request):
         if user is not None and not user.is_proffesor:  # Assuming 'is_professor' is a boolean field on your user model
                 login(request, user)  # Log the user in
                 return redirect('page_of_student')
-        
-# def page_of_teacher(request):
-#     email = request.POST.get('email')
-#     password = request.POST.get('password')
-
-#     if not email or not password:
-#         return HttpResponse('Missing email or password')
-
-#     # Authenticate the user using Django's built-in authentication system
-#     user = authenticate(request, email=email, password=password)
-
-#     if user is not None and user.is_proffesor:  # Assuming 'is_professor' is a boolean field on your user model
-#         login(request, user)  # Log the user in
-#         context = {
-#             'user': user,
-#             'email': email,
-#             'teacher': 'no',
-#         }
-#         return render(request, 'student_display/home.html', context)
-#     else:
-#         # If the user authentication failed or they are a professor
-#         return HttpResponse('Login failed')
-
-
-#     return HttpResponse('Invalid request method')
-
-# @require_POST  # Ensures that this view only accepts POST requests
-# def page_of_student(request):
-#     # Extract email and password from the request
-#     email = request.POST.get('email')
-#     password = request.POST.get('password')
-
-#     if not email or not password:
-#         return HttpResponse('Missing email or password')
-
-#     # Authenticate the user using Django's built-in authentication system
-#     user = authenticate(request, email=email, password=password)
-
-#     if user is not None and not user.is_proffesor:  # Assuming 'is_professor' is a boolean field on your user model
-#         login(request, user)  # Log the user in
-#         context = {
-#             'user': user,
-#             'email': email,
-#             'teacher': 'yes',
-#         }
-#         return render(request, 'student_display/home.html', context)
-#     else:
-#         # If the user authentication failed or they are a professor
-#         return HttpResponse('Login failed')
 
 
 
@@ -123,3 +75,33 @@ def page_of_student(request):
             'teacher': 'no',
         }
         return render(request, 'student_display/home.html')  # Render the home template with the user
+    
+
+
+
+@login_required(login_url='login/')
+def profile_view(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    context = {
+        'profile': profile,
+        'editable': False,  # Editable status to toggle between viewing and editing
+        'project_color': 'rgb(185, 156, 118)',  # Pass your project color scheme
+    }
+    return render(request, 'profile.html', context)
+
+@login_required(login_url='login/')
+def profile_edit(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = ProfileForm(instance=profile)
+    context = {
+        'form': form,
+        'editable': True,  # Toggle to editing mode
+        'project_color': 'rgb(185, 156, 118)',  # Pass your project color scheme
+    }
+    return render(request, 'profile.html', context)

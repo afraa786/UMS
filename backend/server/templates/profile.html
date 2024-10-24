@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'css/teacher/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <script src="{% static 'js/profile.js' %}" defer></script>
+</head>
+<body>
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+        <ul>
+            <li><a href="{%url 'page_of_teacher'%}">Home</a></li>
+            <li><a href="{%url 'profile'%}">Your Profile</a></li>
+            <li><a href="#">Your Batch</a></li>
+            <li><a href="#">Documents</a></li>
+            <li><a href="#">Notices</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <header>
+            <h1>User Profile</h1>
+            <button id="editButton">Edit Profile</button>
+        </header>
+        
+        <section class="profile-info">
+            <h2>Profile Information</h2>
+            <div class="info">
+                <p><strong>Username:</strong> {{ profile.user.username }}</p>
+                <p><strong>Email:</strong> {{ profile.user.email }}</p>
+                <p><strong>Profession:</strong> {{ profile.profession }}</p>
+                <p><strong>Address:</strong> {{ profile.address }}</p>
+                <p><strong>History:</strong> {{ profile.history }}</p>
+                <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+            </div>
+        </section>
+
+        <section class="edit-form hidden">
+            <h2>Edit Profile</h2>
+            <form method="POST" action="{% url 'profile_edit' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="profession">Profession:</label>
+                <input type="text" id="profession" name="profession" value="{{ profile.profession }}" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required>{{ profile.address }}</textarea>
+
+                <label for="history">History:</label>
+                <textarea id="history" name="history" required>{{ profile.history }}</textarea>
+
+                <label for="profile_picture">Profile Picture:</label>
+                <input type="file" id="profile_picture" name="profile_picture" accept="image/*">
+
+                <button type="submit">Save Changes</button>
+                <button type="button" id="cancelButton">Cancel</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
