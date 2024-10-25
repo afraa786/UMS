@@ -12,6 +12,9 @@
     <title>Teacher Dashboard</title>
 </head>
 <body>
+    <div class="welcome" > 
+        Heyy,  {{ user.name }}!
+        </div>
     <input type="checkbox" id="active">
     <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
     <div class="wrapper">
@@ -26,9 +29,11 @@
     
     <!-- New Teacher Profile Section -->
     <div class="profile-section">
-        <img src="https://imgs.search.brave.com/6FW-VbIK0-qjGIEkfmCAUJz_fSqU9Io2rlawaA7eDGM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9jYXJ0/b29uLXNtaWxpbmct/dGVhY2hlci1tYW4t/NTUzNDM4NzIuanBn" alt="Teacher Profile Picture">
+        <img src="{{ profile_image.url }}" alt="Teacher Profile Picture" class="profile-picture" onerror="this.onerror=null; this.src='{% static 'images/log.jpg' %}';">
+
+
         <h2>{{name}}</h2>
-        <p>Senior Mathematics Teacher</p>
+        <p>{{user.name}}</p>
         <div class="details">
             <p><strong>Subjects:</strong> Algebra, Geometry, Calculus</p>
             <p><strong>Email:</strong> johndoe@example.com</p>

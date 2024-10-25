@@ -50,15 +50,20 @@ def login_user(request):
             login(request, user)  # Log the user in
             return redirect('page_of_teacher')
         if user is not None and not user.is_proffesor:  # Assuming 'is_professor' is a boolean field on your user model
-                login(request, user)  # Log the user in
-                return redirect('page_of_student')
+            login(request, user)  # Log the user in
+            return redirect('page_of_student')
 
 
 
 def page_of_teacher(request):
     if request.method == 'GET':
         user = request.user
+        profile =  Profile.objects.get(user=user)
+        print(profile.branch)
+        print(profile.profile_image.url)
         context = {
+            'profile_image': profile.profile_image,
+            'profile': profile,
             'user': user,
             'email': user.email,
             'teacher': 'yes',
@@ -92,16 +97,18 @@ def profile_view(request):
 @login_required(login_url='login/')
 def profile_edit(request):
     profile = get_object_or_404(Profile, user=request.user)
+    
     if request.method == 'POST':
-        form = ProfileForm(request.POST, instance=profile)
+        form = ProfileForm(request.POST, request.FILES, instance=profile)  # Add request.FILES to handle image upload
         if form.is_valid():
             form.save()
             return redirect('profile')
     else:
         form = ProfileForm(instance=profile)
+    
     context = {
         'form': form,
-        'editable': True,  # Toggle to editing mode
-        'project_color': 'rgb(185, 156, 118)',  # Pass your project color scheme
+        'editable': True,
+        'project_color': 'rgb(185, 156, 118)',
     }
     return render(request, 'profile.html', context)

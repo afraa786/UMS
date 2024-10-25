@@ -14,8 +14,8 @@
     <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
     <div class="wrapper">
         <ul>
-            <li><a href="{%url 'page_of_teacher'%}">Home</a></li>
-            <li><a href="{%url 'profile'%}">Your Profile</a></li>
+            <li><a href="{% url 'page_of_teacher' %}">Home</a></li>
+            <li><a href="{% url 'profile' %}">Your Profile</a></li>
             <li><a href="#">Your Batch</a></li>
             <li><a href="#">Documents</a></li>
             <li><a href="#">Notices</a></li>
@@ -32,10 +32,18 @@
             <div class="info">
                 <p><strong>Username:</strong> {{ profile.user.username }}</p>
                 <p><strong>Email:</strong> {{ profile.user.email }}</p>
-                <p><strong>Profession:</strong> {{ profile.profession }}</p>
+                <p><strong>Course:</strong> {{ profile.course }}</p>
+                <p><strong>Branch:</strong> {{ profile.branch }}</p>
+                <p><strong>Subject:</strong> {{ profile.subject }}</p>
                 <p><strong>Address:</strong> {{ profile.address }}</p>
-                <p><strong>History:</strong> {{ profile.history }}</p>
-                <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="profile-picture">
+                <p><strong>Phone Number:</strong> {{ profile.phone_number }}</p>
+                
+                <!-- Check if profile_image exists, if not show a placeholder -->
+                {% if profile.profile_image %}
+                    <img src="{{ profile.profile_image.url }}" alt="Profile Picture" class="profile-picture">
+                {% else %}
+                    <img src="{% static 'images/log.jpg' %}" alt="Profile Picture" class="profile-picture">
+                {% endif %}
             </div>
         </section>
 
@@ -43,17 +51,24 @@
             <h2>Edit Profile</h2>
             <form method="POST" action="{% url 'profile_edit' %}" enctype="multipart/form-data">
                 {% csrf_token %}
-                <label for="profession">Profession:</label>
-                <input type="text" id="profession" name="profession" value="{{ profile.profession }}" required>
+                
+                <label for="course">Course:</label>
+                <input type="text" id="course" name="course" value="{{ profile.course }}" required>
+                
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch" value="{{ profile.branch }}" required>
+                
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" value="{{ profile.subject }}" required>
 
                 <label for="address">Address:</label>
                 <textarea id="address" name="address" required>{{ profile.address }}</textarea>
 
-                <label for="history">History:</label>
-                <textarea id="history" name="history" required>{{ profile.history }}</textarea>
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" id="phone_number" name="phone_number" value="{{ profile.phone_number }}" required>
 
-                <label for="profile_picture">Profile Picture:</label>
-                <input type="file" id="profile_picture" name="profile_picture" accept="image/*">
+                <label for="profile_image">Profile Picture:</label>
+                <input type="file" id="profile_image" name="profile_image" accept="image/*">
 
                 <button type="submit">Save Changes</button>
                 <button type="button" id="cancelButton">Cancel</button>

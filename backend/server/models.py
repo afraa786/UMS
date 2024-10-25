@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from .managers import CustomUserManager
+from phonenumber_field.modelfields import PhoneNumberField
+from django.utils.translation import gettext_lazy as _
+
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=50)
@@ -32,10 +36,13 @@ class Courses(models.Model):
 
 
 class Profile(models.Model):
+    profile_image = models.ImageField( upload_to='profile/', height_field=None, width_field=None, max_length=None, null=True , blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profession = models.CharField(max_length=100)
-    address = models.TextField()
-    history = models.TextField()
+    course = models.TextField(null=True, blank=True)
+    branch = models.TextField(_("Branch"),  null=True, blank=True)
+    subject = models.TextField(_("Subject"),   null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
+    phone_number= PhoneNumberField(null =  True, blank = True)
 
     def __str__(self):
         return self.user.email

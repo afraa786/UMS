@@ -1,0 +1,117 @@
+Global settings
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section header */
+.headerr {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.headerr nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerr .logo {
+    max-width: 120px;
+}
+
+/* Courses Section Styling */
+.courses {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.courses h2, .courses p {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+}
+
+.course-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Fixed width for uniformity */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    width: 100%;
+    height: 200px; /* Fixed height for all images */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fits perfectly */
+}
+
+.course-card h5 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.course-card p {
+    color: #555;
+    font-size: 14px;
+}
+
+.course-card p strong {
+    color: #000;
+    font-size: 16px;
+}
+
+/* Footer Section Styling */
+.footer {
+    padding: 30px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0 0 15px;
+    color: #bbb;
+}
+
+.footer .social-icons {
+    margin-bottom: 20px;
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.footer .social-icons a:hover {
+    color: #ddd;
+}
+
+.footer p {
+    font-size: 14px;
+}
