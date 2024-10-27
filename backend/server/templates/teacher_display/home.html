@@ -3,6 +3,7 @@
     {% load static %}
 <head>
     {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/teacher/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/teacher/home.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -24,19 +25,26 @@
             <li><a href="#">Your Batch</a></li>
             <li><a href="#">Documents</a></li>
             <li><a href="#">Notices</a></li>
+            <li><a href="{%url 'logout'%}">Logout</a></li>
         </ul>
     </div>
     
     <!-- New Teacher Profile Section -->
     <div class="profile-section">
-        <img src="{{ profile_image.url }}" alt="Teacher Profile Picture" class="profile-picture" onerror="this.onerror=null; this.src='{% static 'images/log.jpg' %}';">
+        {% if profile.profile_image %}
+                    <img src="{{ profile.profile_image.url }}" class = 'profile picture'alt="Profile Picture" class="profile-picture">
+                {% else %}
+                    <img src="{% static 'images/log.jpg' %}" alt="Profile Picture" class="profile-picture">
+                {% endif %}
 
 
-        <h2>{{name}}</h2>
         <p>{{user.name}}</p>
         <div class="details">
-            <p><strong>Subjects:</strong> Algebra, Geometry, Calculus</p>
-            <p><strong>Email:</strong> johndoe@example.com</p>
+            <p><strong>Course:</strong> {{profile.course}}</p>
+            <p><strong>Branch:</strong> {{profile.branch}}</p>
+            <p><strong>Subject:</strong> {{profile.subject}}</p>
+            <p><strong>Email:</strong>{{profile.user.email}}</p>
+            <p><strong>Phone number:</strong>{{profile.phone_number}}</p>
         </div>
     </div>
     
@@ -50,6 +58,70 @@
             <li><i class="fas fa-bell"></i> Sent reminders for upcoming test</li>
         </ul>
     </div>
+    
+<!-- Mission Section -->
+<section class="section mission" style="background-image: url('https://example.com/university-mission-bg.jpg');">
+    <h2>Our Mission</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Foster Academic Excellence</h3>
+            <p>Our mission is to provide a robust platform that supports academic growth and student success.</p>
+        </div>
+        <div class="card">
+            <h3>Empower Educators</h3>
+            <p>Enabling educators to effectively manage their courses, grades, and student progress.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Goals Section -->
+<section class="section goals" style="background-image: url('https://example.com/university-goals-bg.jpg');">
+    <h2>Our Goals</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Streamline Administration</h3>
+            <p>Improve efficiency in administrative tasks through automated processes.</p>
+        </div>
+        <div class="card">
+            <h3>Enhance Student Experience</h3>
+            <p>Provide students with a seamless interface to manage their courses, grades, and schedules.</p>
+        </div>
+        <div class="card">
+            <h3>Support Research</h3>
+            <p>Facilitate data-driven research for institutional growth and academic innovation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="section achievements" style="background-image: url('https://example.com/university-achievements-bg.jpg');">
+    <h2>Our Achievements</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Top-Rated University System</h3>
+            <p>Recognized for excellence in providing user-friendly management tools for academia.</p>
+        </div>
+        <div class="card">
+            <h3>Global Reach</h3>
+            <p>Used by institutions in over 30 countries, supporting thousands of educators and students.</p>
+        </div>
+        <div class="card">
+            <h3>Continuous Improvement</h3>
+            <p>Regular updates based on user feedback to ensure high satisfaction and utility.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 University Management System. All Rights Reserved.</p>
+        <p>Follow us on <a href="#">LinkedIn</a>, <a href="#">Twitter</a>, and <a href="#">Facebook</a>.</p>
+    </div>
+</footer>
+
+</body>
+</html>
 
 <script src="{% static 'js/teacher/home.js' %}"></script>
 </body>

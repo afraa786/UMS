@@ -1,165 +1,163 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Oswald', sans-serif;
+/* Base Styling */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: rgb(185, 156, 118);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
-  }
-  body{
-    background: #2c3e50;
-
-
-  }
-  .wrapper{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(375deg, #1cc7d0, #2ede98); 
-    background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);
-    clip-path: circle(25px at calc(0% + 45px) 45px); 
-    background: #000;
-    clip-path: circle(25px at calc(100% - 45px) 45px);
-    transition: all 0.3s ease-in-out;
-  }
-  #active:checked ~ .wrapper{
-    clip-path: circle(75%);
-  }
-  .menu-btn{
-    position: absolute;
-    z-index: 2;
-    right: 20px;
-    /* left: 20px; */
-    top: 20px;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 50%;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-    /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
-    /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
-   /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
-    background: #000;
-    transition: all 0.3s ease-in-out;
-  }
-  #active:checked ~ .menu-btn{
-    color: #fff;
-  }
-  #active:checked ~ .menu-btn i:before{
-    content: "\f00d";
-  }
-  .wrapper ul{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    list-style: none;
-    text-align: center;
-  }
-  .wrapper ul li{
-    margin: 15px 0;
-  }
-  .wrapper ul li a{
-    color: none;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: 500;
-    padding: 5px 30px;
-    color: #fff;
-    border-radius: 50px;
-    background: #000;
-    position: relative;
-    line-height: 50px;
-    transition: all 0.3s ease;
-  }
-  .wrapper ul li a:after{
-    position: absolute;
-    content: "";
-    background: #fff;
-     background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
-    /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
-    width: 104%;
-    height: 110%;
-    left: -2%;
-    top: -5%; /* if the font is 'Oswald'*/
-    border-radius: 50px;
-    transform: scaleY(0);
-    z-index: -1;
-    animation: rotate 1.5s linear infinite;
-    transition: transform 0.3s ease;
-  }
-  .wrapper ul li a:hover:after{
-    transform: scaleY(1);
-  }
-  .wrapper ul li a:hover{
-    color: #fff;
-  }
-  input[type="checkbox"]{
-    display: none;
-  }
-  .content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    text-align: center;
-    width: 100%;
-    color: #202020;
-  }
-  .content .title{
-    font-size: 40px;
-    font-weight: 700;
-  }
-  .content p{
-    font-size: 35px;
-    font-weight: 600;
-  }
-  
-  /* Teacher Profile Section */
+/* Teacher Profile Section */
 .profile-section {
-    margin-top: 60px;
-    text-align: center;
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile-section img {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    border: 4px solid #27ae60;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Add shadow */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #27ae60;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: rotate 10s infinite linear; /* Subtle rotation effect */
 }
 
 .profile-section h2 {
-    font-size: 24px;
-    margin: 10px 0;
-    font-family: 'Oswald', sans-serif;
-}
-
-.profile-section p {
-    font-size: 18px;
-    color: #7f8c8d;
-    font-family: 'Lato', sans-serif;
+  font-size: 28px;
+  margin-top: 15px;
+  color: #2c3e50;
+  font-family: 'Oswald', sans-serif;
 }
 
 .details {
-    margin-top: 15px;
-    font-size: 16px;
-    color: #555;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #555;
+  text-align: left;
+  max-width: 400px;
+  margin: auto;
 }
 
-  @keyframes rotate {
-    0%{
-      filter: hue-rotate(0deg);
-    }
-    100%{
-      filter: hue-rotate(360deg);
-    }
-  }
-  
+.details p {
+  margin: 8px 0;
+}
+
+/* Recent Activities */
+.recent-activities {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-family: 'Lato', sans-serif;
+}
+
+.recent-activities h3 {
+  font-size: 24px;
+  color: #27ae60;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 15px;
+}
+
+.recent-activities ul {
+  list-style: none;
+  padding: 0;
+  color: #555;
+}
+
+.recent-activities ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.recent-activities ul li i {
+  color: #27ae60;
+  margin-right: 8px;
+}
+
+/* Animation */
+@keyframes rotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+/* Body & Section Style */
+.section {
+  padding: 80px 20px;
+  color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Container & Style */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 450px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Footer Style */
+footer {
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer a {
+  color: #27ae60;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #2ecc71;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}

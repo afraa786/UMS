@@ -58,29 +58,56 @@ def login_user(request):
 def page_of_teacher(request):
     if request.method == 'GET':
         user = request.user
-        profile =  Profile.objects.get(user=user)
-        print(profile.branch)
-        print(profile.profile_image.url)
-        context = {
-            'profile_image': profile.profile_image,
-            'profile': profile,
-            'user': user,
-            'email': user.email,
-            'teacher': 'yes',
-        }
-        return render(request, 'teacher_display/home.html')
+        
+        # Try to get the profile for the user
+        try:
+            profile = Profile.objects.get(user=user)
+            context = {
+                'profile': profile,
+                'user': user,
+                'email': user.email,
+                'teacher': 'yes',
+            }
+        except Profile.DoesNotExist:
+            # Handle the case where the profile does not exist
+            context = {
+                'profile': None,  # or handle it however you prefer
+                'user': user,
+                'email': user.email,
+                'teacher': 'yes',
+            }
+            # Optionally, you could also set a message or redirect
+            # messages.error(request, "Profile not found.")
+        
+        return render(request, 'teacher_display/home.html', context)
 
 
 def page_of_student(request):
-    if request.method == 'GET':
+   if request.method == 'GET':
         user = request.user
-        context = {
-            'user': user,
-            'email': user.email,
-            'teacher': 'no',
-        }
-        return render(request, 'student_display/home.html')  # Render the home template with the user
-    
+        
+        # Try to get the profile for the user
+        try:
+            profile = Profile.objects.get(user=user)
+            context = {
+                'profile': profile,
+                'user': user,
+                'email': user.email,
+                'teacher': 'no',
+            }
+        except Profile.DoesNotExist:
+            # Handle the case where the profile does not exist
+            context = {
+                'profile': None,  # or handle it however you prefer
+                'user': user,
+                'email': user.email,
+                'teacher': 'no',
+            }
+            # Optionally, you could also set a message or redirect
+            # messages.error(request, "Profile not found.")
+        
+        return render(request, 'teacher_display/home.html', context)
+
 
 
 
@@ -112,3 +139,7 @@ def profile_edit(request):
         'project_color': 'rgb(185, 156, 118)',
     }
     return render(request, 'profile.html', context)
+
+def LogoutPage(request):
+    logout(request)
+    return redirect('login')

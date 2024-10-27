@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="{% static 'css/teacher/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/teacher/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <script src="{% static 'js/profile.js' %}" defer></script>
 </head>
@@ -19,6 +19,7 @@
             <li><a href="#">Your Batch</a></li>
             <li><a href="#">Documents</a></li>
             <li><a href="#">Notices</a></li>
+            <li><a href="{%url 'logout'%}">Logout</a></li>
         </ul>
     </div>
     <div class="container">

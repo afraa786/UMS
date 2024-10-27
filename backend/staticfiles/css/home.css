@@ -89,22 +89,40 @@ nav img {
 
 .hero-btn {
     display: inline-block;
-    text-decoration: none;
+    padding: 15px 30px;
     color: white;
-    border: 1px solid white;
-    padding: 12px 34px;
-    font-size: 13x;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
+    background-color: black;
+    border: 1px solid crimson; /* Combining two button styles */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, border 0.3s; /* Added transition for border */
 }
 
 .hero-btn:hover {
-
-    border: 1px solid palevioletred;
-    background: pink;
-    transition: 1s;
+    background-color: darkgray;
+    border: 1px solid palevioletred; /* Keep the hover effect consistent */
 }
+
+/* Set a base font size and use rem for sizing */
+:root {
+    font-size: 16px; /* Base font size */
+}
+
+.text-box h1 {
+    font-size: 3rem; /* Use rem for scalable text */
+}
+
+/* Simplifying the contact form layout */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
 
 .courses {
     width: 80%;
@@ -273,6 +291,16 @@ h3 {
     width: 50%;
     
 }
+
+.profile-picture {
+    width: 100px; /* Set appropriate size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional for round images */
+    /* Ensure no display or visibility rules hide the image */
+}
+
+
+
 .test img {
     height: 50px;
     margin-left: 5px;
